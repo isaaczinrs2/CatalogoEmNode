@@ -1,0 +1,182 @@
+
+:root {
+    --wood: #8B5A2B;
+    --dark-wood: #5D4037;
+    --library-green: #2E4C3E;
+    --parchment: #F5EEDC;
+    --bordeaux: #6D1A1A;
+    --gold: #C9A66B;
+    --text-color: #333333;
+  }
+  
+  body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: var(--parchment);
+    background-image: url('https://www.transparenttextures.com/patterns/old-map.png');
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* Container Principal */
+  .container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: white;
+    background-image: linear-gradient(to right, var(--parchment) 0%, white 5%, white 95%, var(--parchment) 100%);
+    border: 15px solid var(--wood);
+    border-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png') 30 round;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .container::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid var(--gold);
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  /* Cabeçalho  */
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: var(--dark-wood);
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    color: var(--gold);
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--gold);
+    position: relative;
+  }
+  
+  .header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+  }
+  
+  .header p {
+    font-size: 1.3rem;
+    
+    font-style: italic;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: rgba(201, 166, 107, 0.8);
+    
+  }
+  
+  /* Tabela */
+  .book-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 0 1px var(--gold);
+    font-size: 1.1rem;
+  }
+  
+  .book-table thead {
+    background-color: var(--library-green);
+    background-image: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png');
+    color: var(--parchment);
+    font-family: 'Cinzel', serif;
+  }
+  
+  .book-table th {
+    padding: 18px 25px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-bottom: 3px solid var(--gold);
+  }
+  
+  .book-table tbody tr {
+    border-bottom: 1px solid rgba(139, 90, 43, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .book-table tbody tr:nth-child(odd) {
+    background-color: rgba(245, 238, 220, 0.5);
+  }
+  
+  .book-table tbody tr:hover {
+    background-color: rgba(46, 76, 62, 0.1);
+  }
+  
+  .book-table td {
+    padding: 16px 25px;
+    position: relative;
+  }
+  
+  /* Estilo dos Elementos */
+  .book-title {
+    font-weight: 600;
+    color: var(--bordeaux);
+    position: relative;
+    padding-left: 25px;
+  }
+  
+  .book-title::before {
+    content: '📚';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+  }
+  
+  .book-price {
+    font-weight: 700;
+    color: var(--dark-wood);
+    display: inline-block;
+    padding: 5px 15px;
+    background: linear-gradient(to right, var(--gold), #E6C88C);
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Ícones */
+  .fas {
+    margin-right: 8px;
+    color: var(--gold);
+  }
+  
+  /* Efeitos de Página Antiga */
+  .page-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(245, 238, 220, 0.2);
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+      margin: 20px;
+      border-width: 10px;
+    }
+    
+    .header h1 {
+      font-size: 2rem;
+    }
+    
+    .book-table {
+      font-size: 1rem;
+    }
+  }

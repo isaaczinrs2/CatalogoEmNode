@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaac's Library</title>
+    <link rel="stylesheet" href="/static/css/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="page-effect"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Catálogo da Biblioteca</h1>
+            <p>O conhecimento secular entre suas páginas</p>
+        </div>
+        
+        <table class="book-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-feather-alt"></i> Código</th>
+                    <th><i class="fas fa-book-open"></i> Obra Literária</th>
+                    <th><i class="fas fa-scroll"></i> Resumo</th>
+                    <th><i class="fas fa-coins"></i> Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i < lista.length; i++) { %>
+                <tr>
+                    <td>#<%= lista[i].id.toString().padStart(3, '0') %></td>
+                    <td><span class="book-title"><%= lista[i].titulo %></span></td>
+                    <td><em><%= lista[i].descricao %></em></td>
+                    <td><span class="book-price"><%= lista[i].preco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) %></span></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
